@@ -1,0 +1,51 @@
+﻿@model AnuncioViewModel
+
+@{
+    ViewData["Title"] = "Anouncement´s Data";
+}
+<script src="https://kit.fontawesome.com/16bd784e77.js" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1 class=" animate__animated animate__fadeInTopRight">Anouncement´s Data</h1>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="SaveAnuncio">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <i class="fas fa-user-tie"></i>
+                        <label asp-for="UsuarioID" class="control-label"></label>
+                        <select asp-for="UsuarioID" class="form-control" asp-items="ViewBag.Usuario"></select>
+                        <span asp-validation-for="UsuarioID" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-book"></i>
+                        <label asp-for="EmpresaID" class="control-label"></label>
+                        <select asp-for="EmpresaID" class="form-control" asp-items="ViewBag.Empresa"></select>
+                        <span asp-validation-for="EmpresaID" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <i class="fab fa-accusoft"></i>
+                        <label asp-for="Categoria" class="control-label"></label>
+                        <select asp-for="Categoria" class="form-control" asp-items="Html.GetEnumSelectList<Categoria>()"></select>
+                        <span asp-validation-for="Categoria" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-book"></i>
+                        <label asp-for="Anuncios" class="control-label"></label>
+                        <input asp-for="Anuncios" class="form-control" />
+                        <span asp-validation-for="Anuncios" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Send" class="btn btn-outline-success float-right" />
+                        <a class="btn btn-outline-secondary" asp-action="Index">Return</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

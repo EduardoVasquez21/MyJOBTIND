@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Usuario>
+@{
+    ViewData["Title"] = "MostrarAlumnos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<script src="https://kit.fontawesome.com/16bd784e77.js" crossorigin="anonymous"></script>*@
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<h1 class=" animate__animated animate__lightSpeedInRight">User´s List</h1>
+
+
+<table id="mitablastu" class="table table-dark table-dark">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(x => x.Id)</th>
+            <th>@Html.DisplayNameFor(x => x.Nombres)</th>
+            <th>@Html.DisplayNameFor(x => x.Apellidos)</th>
+            <th>@Html.DisplayNameFor(x => x.Edad)</th>
+            <th>@Html.DisplayNameFor(x => x.DUI)</th>
+            <th>@Html.DisplayNameFor(x => x.Telefono)</th>
+            <th>@Html.DisplayNameFor(x => x.Email)</th>
+            <th>Actions</th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @foreach (var user in Model)
+        {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => user.Id)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => user.Nombres)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => user.Apellidos)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => user.Edad)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => user.DUI)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => user.Telefono)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => user.Email)
+            </th>
+
+
+            <td>
+                <a class="btn btn-outline-primary" asp-action="UpdateUser" asp-route-id="@user.Id"><i class="fas fa-edit"></i>Update</a>
+
+            </td>
+        </tr>
+        }
+
+    </tbody>
+
+</table>
+
+<div style="position:fixed;right:25px; bottom:75px;" class="text-white">
+    <a asp-controller="Usuario" asp-action="SaveUser" class="btn btn-success">
+        <i class="fas fa-plus"></i>ADD
+    </a>
+</div>

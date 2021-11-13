@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Empresa>
+@{
+    ViewData["Title"] = "MostrarAlumnos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<script src="https://kit.fontawesome.com/16bd784e77.js" crossorigin="anonymous"></script>*@
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<h1 class=" animate__animated animate__lightSpeedInRight">Company´s List</h1>
+
+
+<table id="mitablastu" class="table table-dark table-dark">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(x => x.Id)</th>
+            <th>@Html.DisplayNameFor(x => x.NombreEmpresa)</th>
+            <th>@Html.DisplayNameFor(x => x.TelefonoEmp)</th>
+            <th>@Html.DisplayNameFor(x => x.EmailEmp)</th>
+            <th>@Html.DisplayNameFor(x => x.Vacante)</th>
+            <th>Actions</th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @foreach (var company in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => company.Id)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => company.NombreEmpresa)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => company.TelefonoEmp)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => company.EmailEmp)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => company.Vacante)
+                </th>
+                <td>
+                    <a class="btn btn-outline-primary" asp-action="EnterpriseUpdate" asp-route-id="@company.Id"><i class="fas fa-edit"></i>Update</a>
+
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
+<div style="position:fixed;right:25px; bottom:75px;" class="text-white">
+    <a asp-controller="Empresa" asp-action="SaveEnterprise" class="btn btn-success">
+        <i class="fas fa-plus"></i>Add
+    </a>
+</div>
