@@ -14,7 +14,7 @@ namespace JOBTIND21.Data.ViewModels
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Display(Name = "TrabId")]
+        [Display(Name = "Trabajador")]
         [Required(ErrorMessage = "DATO OBLIGATORIO")]
         public int UserTrabajadorID { get; set; }
 

@@ -86,7 +86,7 @@ namespace JOBTIND21.Repositorio
         {
             var values = new PerfilDropDown()
             {
-                UserTrabajadors = bd.UserTrabajadors.OrderBy(u => u.Name).ToList(),
+                UserTrabajador = bd.UserTrabajadors.OrderBy(u => u.Name).ToList(),
             };
 
             return values;

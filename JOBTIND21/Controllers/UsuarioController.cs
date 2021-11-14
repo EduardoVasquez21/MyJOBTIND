@@ -44,7 +44,7 @@ namespace JOBTIND21.Controllers
         public IActionResult UpdateUser(int id)
         {
             ViewBag.State = "UpdateUser";
-            ViewBag.Title = "Update Course";
+            ViewBag.Title = "Update User";
             var UserEdit = iusuario.GetById(id);
             if (UserEdit == null)
                 return View("Error");
@@ -66,9 +66,9 @@ namespace JOBTIND21.Controllers
 
         public IActionResult GetAll()
         {
-            var DandoFormatoJsonStudent = iusuario.GetAll();
+            var DandoFormatoJsonUser = iusuario.GetAll();
 
-            return Json(new { data = DandoFormatoJsonStudent });
+            return Json(new { data = DandoFormatoJsonUser });
         }
 
         public IActionResult UserList()

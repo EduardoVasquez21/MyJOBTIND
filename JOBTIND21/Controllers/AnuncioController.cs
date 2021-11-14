@@ -66,6 +66,7 @@ namespace JOBTIND21.Controllers
                 UsuarioID = anuncio.UsuarioID,
                 EmpresaID = anuncio.EmpresaID,
                 Categoria = anuncio.Categoria,
+                Anuncios = anuncio.Anuncios,
             };
 
             var AnunData = ianuncio.GetNewEnrollmentValues();
@@ -84,7 +85,7 @@ namespace JOBTIND21.Controllers
 
             if (!ModelState.IsValid)
             {
-                var AnuncioData = ianuncio.GetNewEnrollmentValues();
+                //var AnuncioData = ianuncio.GetNewEnrollmentValues();
                 var AnunData = ianuncio.GetNewEnrollmentValues();
                 ViewBag.Usuario = new SelectList(AnunData.Usuario, "Id", "Nombres");
                 ViewBag.Empresa = new SelectList(AnunData.Empresa, "Id", "NombreEmpresa");

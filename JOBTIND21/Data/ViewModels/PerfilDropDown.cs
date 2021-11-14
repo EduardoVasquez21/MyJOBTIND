@@ -10,11 +10,11 @@ namespace JOBTIND21.Data.ViewModels
     {
         public PerfilDropDown()
         {
-            UserTrabajadors = new List<UserTrabajador>();
+            UserTrabajador = new List<UserTrabajador>();
 
         }
 
-        public List<UserTrabajador> UserTrabajadors { get; set; }
+        public List<UserTrabajador> UserTrabajador { get; set; }
 
     }
 }
