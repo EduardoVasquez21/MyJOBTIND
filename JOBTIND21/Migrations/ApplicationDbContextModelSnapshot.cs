@@ -80,6 +80,69 @@ namespace JOBTIND21.Migrations
                     b.ToTable("Empresas");
                 });
 
+            modelBuilder.Entity("JOBTIND21.Dominio.PerfilTrabajador", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CVLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DUI")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Descripcion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("State")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Telephone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserTrabajadorID")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserTrabajadorID");
+
+                    b.ToTable("PerfilTrabajadors");
+                });
+
+            modelBuilder.Entity("JOBTIND21.Dominio.UserTrabajador", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserTrabajadors");
+                });
+
             modelBuilder.Entity("JOBTIND21.Dominio.Usuario", b =>
                 {
                     b.Property<int>("Id")
@@ -94,13 +157,6 @@ namespace JOBTIND21.Migrations
                     b.Property<string>("Contraseña")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DUI")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Edad")
-                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -138,9 +194,25 @@ namespace JOBTIND21.Migrations
                     b.Navigation("Usuario");
                 });
 
+            modelBuilder.Entity("JOBTIND21.Dominio.PerfilTrabajador", b =>
+                {
+                    b.HasOne("JOBTIND21.Dominio.UserTrabajador", "UserTrabajador")
+                        .WithMany("PerfilTrabajador")
+                        .HasForeignKey("UserTrabajadorID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("UserTrabajador");
+                });
+
             modelBuilder.Entity("JOBTIND21.Dominio.Empresa", b =>
                 {
                     b.Navigation("Anuncio");
+                });
+
+            modelBuilder.Entity("JOBTIND21.Dominio.UserTrabajador", b =>
+                {
+                    b.Navigation("PerfilTrabajador");
                 });
 
             modelBuilder.Entity("JOBTIND21.Dominio.Usuario", b =>

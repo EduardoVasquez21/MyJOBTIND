@@ -48,7 +48,7 @@ namespace JOBTIND21.Repositorio
                 anuncio.UsuarioID = data.UsuarioID;
                 anuncio.EmpresaID = data.EmpresaID;
                 anuncio.Anuncios = data.Anuncios;
-                anuncio.Estado = data.Estado = true;
+                anuncio.Estado = data.Estado = false;
 
                 bd.SaveChanges();
             }

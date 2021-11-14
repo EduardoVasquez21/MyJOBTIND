@@ -24,6 +24,23 @@ namespace JOBTIND21.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UserTrabajadors",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Age = table.Column<int>(type: "int", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserTrabajadors", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Usuarios",
                 columns: table => new
                 {
@@ -31,8 +48,6 @@ namespace JOBTIND21.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombres = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Apellidos = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Edad = table.Column<int>(type: "int", nullable: false),
-                    DUI = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Telefono = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Contraseña = table.Column<string>(type: "nvarchar(max)", nullable: false)
@@ -40,6 +55,30 @@ namespace JOBTIND21.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Usuarios", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PerfilTrabajadors",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserTrabajadorID = table.Column<int>(type: "int", nullable: false),
+                    DUI = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Telephone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CVLink = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    State = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PerfilTrabajadors", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_PerfilTrabajadors_UserTrabajadors_UserTrabajadorID",
+                        column: x => x.UserTrabajadorID,
+                        principalTable: "UserTrabajadors",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -80,6 +119,11 @@ namespace JOBTIND21.Migrations
                 name: "IX_Anuncio_UsuarioID",
                 table: "Anuncio",
                 column: "UsuarioID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PerfilTrabajadors_UserTrabajadorID",
+                table: "PerfilTrabajadors",
+                column: "UserTrabajadorID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -88,10 +132,16 @@ namespace JOBTIND21.Migrations
                 name: "Anuncio");
 
             migrationBuilder.DropTable(
+                name: "PerfilTrabajadors");
+
+            migrationBuilder.DropTable(
                 name: "Empresas");
 
             migrationBuilder.DropTable(
                 name: "Usuarios");
+
+            migrationBuilder.DropTable(
+                name: "UserTrabajadors");
         }
     }
 }

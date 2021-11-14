@@ -8,23 +8,25 @@ using System.Threading.Tasks;
 
 namespace JOBTIND21.Dominio
 {
-    public class Usuario:IBase
+    public class UserTrabajador:IBase
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+
         [Display(Name = "Nombre")]
         [Required(ErrorMessage = "DATO OBLIGATORIO")]
-        public string Nombres { get; set; }
+        public string Name { get; set; }
 
         [Display(Name = "Apellidos")]
         [Required(ErrorMessage = "DATO OBLIGATORIO")]
-        public string Apellidos { get; set; }
+        public string LastName { get; set; }
 
-        [Display(Name = "Telefono")]
+        [Display(Name = "Edad")]
         [Required(ErrorMessage = "DATO OBLIGATORIO")]
-        public string Telefono { get; set; }
+        [Range(18, int.MaxValue, ErrorMessage = "Lo sentimos, debes ser mayor de edad.")]
+        public int Age { get; set; }
 
         [Display(Name = "Email")]
         [Required(ErrorMessage = "DATO OBLIGATORIO")]
@@ -32,8 +34,8 @@ namespace JOBTIND21.Dominio
 
         [Display(Name = "Contraseña")]
         [Required(ErrorMessage = "DATO OBLIGATORIO")]
-        public string Contraseña { get; set; }
+        public string Password { get; set; }
 
-        public ICollection<Anuncio> Anuncio { get; set; }
+        public ICollection<PerfilTrabajador> PerfilTrabajador { get; set; }
     }
 }

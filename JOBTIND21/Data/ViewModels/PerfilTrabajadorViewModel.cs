@@ -1,4 +1,4 @@
-﻿using JOBTIND21.Data.Base;
+﻿using JOBTIND21.Dominio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,34 +6,39 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace JOBTIND21.Dominio
+namespace JOBTIND21.Data.ViewModels
 {
-    public class Usuario:IBase
+    public class PerfilTrabajadorViewModel
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Display(Name = "Nombre")]
+        [Display(Name = "TrabId")]
         [Required(ErrorMessage = "DATO OBLIGATORIO")]
-        public string Nombres { get; set; }
+        public int UserTrabajadorID { get; set; }
 
-        [Display(Name = "Apellidos")]
+
+        [Display(Name = "DUI")]
         [Required(ErrorMessage = "DATO OBLIGATORIO")]
-        public string Apellidos { get; set; }
+        public string DUI { get; set; }
+
 
         [Display(Name = "Telefono")]
         [Required(ErrorMessage = "DATO OBLIGATORIO")]
-        public string Telefono { get; set; }
+        public string Telephone { get; set; }
 
-        [Display(Name = "Email")]
+
+        [Display(Name = "CVLink")]
         [Required(ErrorMessage = "DATO OBLIGATORIO")]
-        public string Email { get; set; }
+        public string CVLink { get; set; }
 
-        [Display(Name = "Contraseña")]
+        [Display(Name = "Descripcion")]
         [Required(ErrorMessage = "DATO OBLIGATORIO")]
-        public string Contraseña { get; set; }
+        public string Descripcion { get; set; }
 
-        public ICollection<Anuncio> Anuncio { get; set; }
+        public bool State { get; set; }
+
+        public UserTrabajador UserTrabajador { get; set; }
     }
 }
