@@ -1,0 +1,46 @@
+﻿@model PerfilEmpresaViewModels
+
+@{
+    ViewData["Title"] = "Description´s Data";
+}
+
+<script src="https://kit.fontawesome.com/16bd784e77.js" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1 class=" animate__animated animate__fadeInTopRight">Description´s Update</h1>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="UpdateProfile">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <i class="fas fa-user-tie"></i>
+                        <label asp-for="EmpresaID" class="control-label"></label>
+                        <select asp-for="EmpresaID" class="form-control" asp-items="ViewBag.Empr"></select>
+                        <span asp-validation-for="EmpresaID" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <i class="fab fa-accusoft"></i>
+                        <label asp-for="DepartamentoOperario" class="control-label"></label>
+                        <select asp-for="DepartamentoOperario" class="form-control" asp-items="Html.GetEnumSelectList<Departamentos>()"></select>
+                        <span asp-validation-for="DepartamentoOperario" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-mobile"></i>
+                        <label asp-for="DescripcionEmpresa" class="control-label"></label>
+                        <input asp-for="DescripcionEmpresa" class="form-control" />
+                        <span asp-validation-for="DescripcionEmpresa" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Update" class="btn btn-outline-success float-right" />
+                        <a class="btn btn-outline-secondary" asp-action="Profile">Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -80,6 +80,32 @@ namespace JOBTIND21.Migrations
                     b.ToTable("Empresas");
                 });
 
+            modelBuilder.Entity("JOBTIND21.Dominio.PerfilEmpresa", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DepartamentoOperario")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DescripcionEmpresa")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmpresaID")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("States")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmpresaID");
+
+                    b.ToTable("PerfilEmpresas");
+                });
+
             modelBuilder.Entity("JOBTIND21.Dominio.PerfilTrabajador", b =>
                 {
                     b.Property<int>("Id")
@@ -194,6 +220,17 @@ namespace JOBTIND21.Migrations
                     b.Navigation("Usuario");
                 });
 
+            modelBuilder.Entity("JOBTIND21.Dominio.PerfilEmpresa", b =>
+                {
+                    b.HasOne("JOBTIND21.Dominio.Empresa", "Empresa")
+                        .WithMany("PerfilEmpresa")
+                        .HasForeignKey("EmpresaID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Empresa");
+                });
+
             modelBuilder.Entity("JOBTIND21.Dominio.PerfilTrabajador", b =>
                 {
                     b.HasOne("JOBTIND21.Dominio.UserTrabajador", "UserTrabajador")
@@ -208,6 +245,8 @@ namespace JOBTIND21.Migrations
             modelBuilder.Entity("JOBTIND21.Dominio.Empresa", b =>
                 {
                     b.Navigation("Anuncio");
+
+                    b.Navigation("PerfilEmpresa");
                 });
 
             modelBuilder.Entity("JOBTIND21.Dominio.UserTrabajador", b =>

@@ -36,6 +36,7 @@ namespace JOBTIND21.Dominio
 
 
         public ICollection<Anuncio> Anuncio { get; set; }
+        public ICollection<PerfilEmpresa> PerfilEmpresa { get; set; }
 
     }
 }
