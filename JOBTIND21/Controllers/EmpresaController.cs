@@ -23,6 +23,13 @@ namespace JOBTIND21.Controllers
             this.iperfilEmpresa= iperfilEmpresa;
             _logger = logger;
         }
+
+        public IActionResult Bienvenida()
+        {
+            return View();
+        }
+
+
         public IActionResult SaveEnterprise()
         {
             ViewBag.State = "SaveEnterprise";
@@ -82,12 +89,25 @@ namespace JOBTIND21.Controllers
             return View(companys);
         }
 
+        public IActionResult ListaEmp()
+        {
+            var Emp = iempresa.GetAll();
+
+            return View(Emp);
+        }
+
         //Apartado Perfil de la empresa
 
         public IActionResult Profile()
         {
             var prof = iperfilEmpresa.GetAll().Where(e => e.States == true);
             return View(prof);
+        }
+
+        public IActionResult ProfileView()
+        {
+            var profilgo = iperfilEmpresa.GetAll().Where(e => e.States == true);
+            return View(profilgo);
         }
 
         public IActionResult AddProfile()

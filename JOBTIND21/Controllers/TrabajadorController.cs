@@ -23,6 +23,11 @@ namespace JOBTIND21.Controllers
             this.iperfiltrabajador = iperfiltrabajador;
             _logger = logger;
         }
+
+        public IActionResult Bienvenue()
+        {
+            return View();
+        }
         public IActionResult AddTrabajador()
         {
             ViewBag.State = "AddTrabajador";

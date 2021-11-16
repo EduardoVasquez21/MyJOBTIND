@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "Bienvenida";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Empresa</h1>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome, select the option you want</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div style="position:fixed;right:650px; bottom:350px;" class="text-white">
+    <a asp-controller="Empresa" asp-action="Companylist" class="btn btn-success">
+        <i class="fas fa-plus"></i>Empresas
+    </a>
+</div>
+<div style="position:fixed;right:650px; bottom:250px;" class="text-white">
+    <a asp-controller="Trabajador" asp-action="WorkerList" class="btn btn-success">
+        <i class="fas fa-plus"></i>Lista de Usuarios
+    </a>
+</div>
+

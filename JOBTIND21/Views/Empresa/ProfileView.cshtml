@@ -1,0 +1,52 @@
+﻿@model IEnumerable<PerfilEmpresa>
+@{
+    ViewData["Title"] = "PerfilEmp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://kit.fontawesome.com/16bd784e77.js" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<h1 class=" animate__animated animate__bounceInUp">Company´s Profiles</h1>
+
+
+<table id="tablaprof" class="table table-dark table-dark">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(x => x.Id)</th>
+            <th>@Html.DisplayNameFor(x => x.Empresa.NombreEmpresa)</th>
+            <th>@Html.DisplayNameFor(x => x.DescripcionEmpresa)</th>
+            <th>Actions</th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @foreach (var descriptionE in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => descriptionE.Id)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => descriptionE.Empresa.NombreEmpresa)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => descriptionE.DescripcionEmpresa)
+                </th>
+                <td>
+                    <a class="btn btn-outline-primary" asp-action="GoProfile" asp-route-id="@descriptionE.Id"><i class="fas fa-edit"></i>Go to Profile</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
+<div style="position:fixed;right:25px; bottom:75px;" class="text-white">
+    <a asp-controller="Empresa" asp-action="AddProfile" class="btn btn-success">
+        <i class="fas fa-plus"></i>New Profile
+    </a>
+</div>
+
