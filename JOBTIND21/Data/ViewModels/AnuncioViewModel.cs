@@ -18,11 +18,11 @@ namespace JOBTIND21.Data.ViewModels
         [Required(ErrorMessage = "DATO OBLIGATORIO")]
         public string Anuncios { get; set; }
 
-        [Display(Name = "Nombre")]
+        [Display(Name = "NombreContacto")]
         [Required(ErrorMessage = "DATO OBLIGATORIO")]
         public int UsuarioID { get; set; }
 
-        [Display(Name = "Nombre")]
+        [Display(Name = "NombreEmpresa")]
         [Required(ErrorMessage = "DATO OBLIGATORIO")]
         public int EmpresaID { get; set; }
 

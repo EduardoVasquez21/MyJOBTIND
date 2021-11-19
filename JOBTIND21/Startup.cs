@@ -35,6 +35,7 @@ namespace JOBTIND21
             services.AddTransient<IUserTrabajador, UserTrabajadorRepositorio>();
             services.AddTransient<IPerfilTrabajador, PerfilTrabajadorRepositorio>();
             services.AddTransient<IPerfilEmpresa, PerfilEmpresaRepositorio>();
+            services.AddTransient<IAnuncioInfo, InfoAnuncioRepositorio>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -128,7 +128,7 @@ namespace JOBTIND21.Controllers
                 return View(perfilEmp);
             }
             iperfilEmpresa.AddPerfilE(perfilEmp);
-            return RedirectToAction(nameof(AddProfile));
+            return RedirectToAction(nameof(Profile));
 
         }
 

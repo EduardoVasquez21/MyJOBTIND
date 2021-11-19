@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JOBTIND21.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211115170929_Migrations")]
+    [Migration("20211119164018_Migrations")]
     partial class Migrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -80,6 +80,41 @@ namespace JOBTIND21.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Empresas");
+                });
+
+            modelBuilder.Entity("JOBTIND21.Dominio.InfoAnuncio", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AnuncioID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("EdadRequerida")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Horarios")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Lugar")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Requisitos")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Salario")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Stado")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AnuncioID");
+
+                    b.ToTable("InfoAnuncio");
                 });
 
             modelBuilder.Entity("JOBTIND21.Dominio.PerfilEmpresa", b =>
@@ -222,6 +257,17 @@ namespace JOBTIND21.Migrations
                     b.Navigation("Usuario");
                 });
 
+            modelBuilder.Entity("JOBTIND21.Dominio.InfoAnuncio", b =>
+                {
+                    b.HasOne("JOBTIND21.Dominio.Anuncio", "Anuncio")
+                        .WithMany("InfoAnuncio")
+                        .HasForeignKey("AnuncioID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Anuncio");
+                });
+
             modelBuilder.Entity("JOBTIND21.Dominio.PerfilEmpresa", b =>
                 {
                     b.HasOne("JOBTIND21.Dominio.Empresa", "Empresa")
@@ -242,6 +288,11 @@ namespace JOBTIND21.Migrations
                         .IsRequired();
 
                     b.Navigation("UserTrabajador");
+                });
+
+            modelBuilder.Entity("JOBTIND21.Dominio.Anuncio", b =>
+                {
+                    b.Navigation("InfoAnuncio");
                 });
 
             modelBuilder.Entity("JOBTIND21.Dominio.Empresa", b =>

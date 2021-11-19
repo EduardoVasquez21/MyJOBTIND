@@ -27,5 +27,7 @@ namespace JOBTIND21.Dominio
         public Empresa Empresa { get; set; }
 
         public bool Estado { get; set; }
+
+        public ICollection<InfoAnuncio> InfoAnuncio { get; set; }
     }
 }

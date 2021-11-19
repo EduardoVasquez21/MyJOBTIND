@@ -22,6 +22,7 @@ namespace JOBTIND21.Data
         public DbSet<UserTrabajador> UserTrabajadors { get; set; }
         public DbSet<PerfilTrabajador> PerfilTrabajadors { get; set; }
         public DbSet<PerfilEmpresa> PerfilEmpresas { get; set; }
+        public DbSet<InfoAnuncio> InfoAnuncio { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

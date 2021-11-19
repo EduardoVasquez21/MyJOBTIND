@@ -132,6 +132,31 @@ namespace JOBTIND21.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "InfoAnuncio",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AnuncioID = table.Column<int>(type: "int", nullable: false),
+                    EdadRequerida = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Requisitos = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Horarios = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Salario = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Lugar = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Stado = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_InfoAnuncio", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_InfoAnuncio_Anuncio_AnuncioID",
+                        column: x => x.AnuncioID,
+                        principalTable: "Anuncio",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Anuncio_EmpresaID",
                 table: "Anuncio",
@@ -141,6 +166,11 @@ namespace JOBTIND21.Migrations
                 name: "IX_Anuncio_UsuarioID",
                 table: "Anuncio",
                 column: "UsuarioID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_InfoAnuncio_AnuncioID",
+                table: "InfoAnuncio",
+                column: "AnuncioID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PerfilEmpresas_EmpresaID",
@@ -156,7 +186,7 @@ namespace JOBTIND21.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Anuncio");
+                name: "InfoAnuncio");
 
             migrationBuilder.DropTable(
                 name: "PerfilEmpresas");
@@ -165,13 +195,16 @@ namespace JOBTIND21.Migrations
                 name: "PerfilTrabajadors");
 
             migrationBuilder.DropTable(
-                name: "Usuarios");
+                name: "Anuncio");
+
+            migrationBuilder.DropTable(
+                name: "UserTrabajadors");
 
             migrationBuilder.DropTable(
                 name: "Empresas");
 
             migrationBuilder.DropTable(
-                name: "UserTrabajadors");
+                name: "Usuarios");
         }
     }
 }
