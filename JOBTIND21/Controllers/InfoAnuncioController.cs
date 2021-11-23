@@ -93,7 +93,7 @@ namespace JOBTIND21.Controllers
 
         }
 
-        public IActionResult DeleteProfile(int id)
+        public IActionResult DeleteInformation(int id)
         {
             var infoA = ianuncioInfo.GetinfoById(id);
             if (infoA == null)
@@ -117,31 +117,31 @@ namespace JOBTIND21.Controllers
             return RedirectToAction(nameof(InformationAnun));
         }
 
-        public IActionResult SeeInfo(int id)
-        {
-            var infoA = ianuncioInfo.GetinfoById(id);
-            if (infoA == null)
-                return View("Error");
+        //public IActionResult SeeInfo(int id)
+        //{
+        //    var infoA = ianuncioInfo.GetinfoById(id);
+        //    if (infoA == null)
+        //        return View("Error");
 
-            var requesst = new InfoAnuncioViewModel()
-            {
-                Id = infoA.Id,
+        //    var requesst = new InfoAnuncioViewModel()
+        //    {
+        //        Id = infoA.Id,
 
-                AnuncioID = infoA.AnuncioID,
-                EdadRequerida = infoA.EdadRequerida,
-                Requisitos = infoA.Requisitos,
-                Horarios = infoA.Horarios,
-                Salario = infoA.Salario,
-                Lugar = infoA.Lugar,
+        //        AnuncioID = infoA.AnuncioID,
+        //        EdadRequerida = infoA.EdadRequerida,
+        //        Requisitos = infoA.Requisitos,
+        //        Horarios = infoA.Horarios,
+        //        Salario = infoA.Salario,
+        //        Lugar = infoA.Lugar,
 
-            };
+        //    };
 
-            var infodata = ianuncioInfo.GetNewInfoValues();
-            ViewBag.Info = new SelectList(infodata.Anuncio, "Id", "Anuncios");
+        //    var infodata = ianuncioInfo.GetNewInfoValues();
+        //    ViewBag.Info = new SelectList(infodata.Anuncio, "Id", "Anuncios");
 
 
-            return View(requesst);
+        //    return View(requesst);
 
-        }
+        //}
     }
 }

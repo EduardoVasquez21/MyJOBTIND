@@ -1,0 +1,68 @@
+﻿@model IEnumerable<InfoAnuncio>
+@{
+    ViewData["Title"] = "AnuncioInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://kit.fontawesome.com/16bd784e77.js" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<h1 class=" animate__animated animate__bounceInUp">Annoucement´s Information</h1>
+
+
+<table id="mitablastu" class="table table-dark table-dark">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(x => x.Id)</th>
+            <th>@Html.DisplayNameFor(x => x.AnuncioID)</th>
+            <th>@Html.DisplayNameFor(x => x.EdadRequerida)</th>
+            <th>@Html.DisplayNameFor(x => x.Requisitos)</th>
+            <th>@Html.DisplayNameFor(x => x.Horarios)</th>
+            <th>@Html.DisplayNameFor(x => x.Salario)</th>
+            <th>@Html.DisplayNameFor(x => x.Lugar)</th>
+            <th>Actions</th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @foreach (var infox in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => infox.Id)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => infox.Anuncio.Anuncios)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => infox.EdadRequerida)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => infox.Requisitos)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => infox.Horarios)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => infox.Salario)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => infox.Lugar)
+                </th>
+                <td>
+                    <a class="btn btn-outline-primary" asp-action="UpdateInfo" asp-route-id="@infox.Id"><i class="fas fa-edit"></i>Update</a>
+                    <a class="btn btn-danger" asp-action="DeleteInformation" asp-route-id="@infox.Id"><i class="fas fa-edit"></i>Delete</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
+<div style="position:fixed;right:25px; bottom:75px;" class="text-white">
+    <a asp-controller="InfoAnuncio" asp-action="AddInfo" class="btn btn-success">
+        <i class="fas fa-plus"></i>ADD
+    </a>
+</div>
