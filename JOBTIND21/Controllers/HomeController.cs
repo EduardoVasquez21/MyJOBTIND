@@ -42,8 +42,15 @@ namespace JOBTIND21.Controllers
 
         }
 
+        public IActionResult Menu()
+        {
+            return View();       
+        }
 
-
+        public IActionResult Informacion()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {
