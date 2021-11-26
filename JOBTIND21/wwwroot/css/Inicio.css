@@ -5,12 +5,15 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #1a0321;
+    background-image: url(Imagenes/img4.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     font-family: consolas;
 }
 
 .btn-Inicio {
-    position: relative;
+    position: absolute;
     display: inline-block;
     padding: 15px 30px;
     color: #fff;
@@ -19,6 +22,7 @@
     font-size: 24px;
     overflow: hidden;
     transition: 0.2s;
+    left:600px;
 }
 
     .btn-Inicio:hover {
@@ -30,6 +34,7 @@
     .btn-Inicio span {
         position: absolute;
         display: block;
+        right: 50px;
     }
 
 #span1 {

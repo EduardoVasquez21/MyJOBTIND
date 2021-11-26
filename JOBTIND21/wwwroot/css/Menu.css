@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: white;
+    background-color:white;
 }
 
 nav {
@@ -117,6 +117,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    
 }
 
 .banner_title h2 {
@@ -142,13 +143,31 @@ body {
 
 .banner_img {
     animation: movimiento 2.5s linear infinite;
+    
 }
 
     .banner_img img {
+        position: absolute;
+        right:-140px;
         width: 500px;
         display: block;
+        border: solid black 3px;
+        top:50px;
     }
 
+@keyframes movimiento {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(30px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
 
 .Madein {
     background-color: white;
