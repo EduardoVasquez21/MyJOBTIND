@@ -60,5 +60,7 @@
 <div style="position:fixed;right:25px; bottom:75px;" class="text-white">
     <a asp-controller="Usuario" asp-action="SaveUser" class="btn btn-success">
         <i class="fas fa-plus"></i>ADD
+
     </a>
+    <button class="btn btn-outline-secondary"> @Html.ActionLink("Back", "SaveUser", "Usuario")</button>
 </div>
