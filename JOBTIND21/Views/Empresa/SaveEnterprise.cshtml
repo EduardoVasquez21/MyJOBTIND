@@ -38,9 +38,25 @@
                     <div class="form-group">
                         <i class="fas fa-lock"></i>
                         <label asp-for="ContraseñaEmp" class="control-label"></label>
-                        <input asp-for="ContraseñaEmp" class="form-control" />
+                        <input asp-for="ContraseñaEmp" class="form-control" id="Show" />
                         <span asp-validation-for="ContraseñaEmp" class="text-danger"></span>
+
+                        <label>Ocultar Contraseña</label>
+                        <input type="checkbox" name="" onclick="myFunction()">
+                        <br><br>
+
                     </div>
+                    <script type="text/javascript">
+                        function myFunction() {
+                            var Show = document.getElementById('Show');
+                            if (Show.type == 'password') {
+                                Show.type = 'text';
+                            }
+                            else {
+                                Show.type = 'password';
+                            }
+                        }
+                    </script>
                     <div class="form-group">
                         <i class="far fa-star"></i>
                         <label asp-for="Vacante" class="control-label"></label>

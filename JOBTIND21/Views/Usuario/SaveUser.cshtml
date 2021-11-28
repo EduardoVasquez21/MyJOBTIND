@@ -45,9 +45,27 @@
                     <div class="form-group">
                         <i class="fas fa-key"></i>
                         <label asp-for="Contraseña" class="control-label"></label>
-                        <input asp-for="Contraseña" class="form-control" />
+                        <input asp-for="Contraseña" class="form-control" id="Show"/>
                         <span asp-validation-for="Contraseña" class="text-danger"></span>
+
+                        <label>Ocultar Contraseña</label>
+                        <input type="checkbox" name="" onclick="myFunction()">
+                        <br><br>
+
                     </div>
+                    <script type="text/javascript">
+                        function myFunction() {
+                            var Show = document.getElementById('Show');
+                            if (Show.type == 'password') {
+                                Show.type = 'text';
+                            }
+                            else {
+                                Show.type = 'password';
+                            }
+                        }
+                    </script>
+                   
+
                     <div class="form-group">
                         <input type="submit" value="Send" class="btn btn-outline-success float-right" />
                         <a class="btn btn-outline-secondary" asp-action="UserList">List</a>
