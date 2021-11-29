@@ -24,10 +24,21 @@ namespace JOBTIND21.Controllers
             _logger = logger;
         }
 
-        public IActionResult Bienvenue()
+        public IActionResult DescripcionVist()
         {
-            return View();
+            var descripcionuno = iperfiltrabajador.GetAll().Where(e => e.State == true);
+            return View(descripcionuno);
+
         }
+
+        public IActionResult WorkerVist()
+        {
+            var worker = iusertrabajador.GetAll();
+
+            return View(worker);
+        }
+
+
         public IActionResult AddTrabajador()
         {
             ViewBag.State = "AddTrabajador";

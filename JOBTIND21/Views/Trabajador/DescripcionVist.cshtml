@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PerfilTrabajador>
+@{
+    ViewData["Title"] = "Descripciones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/Worker.css" />
+<script src="https://kit.fontawesome.com/16bd784e77.js" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<h1 class=" animate__animated animate__bounceInUp">Description´s List</h1>
+
+
+<table id="tablades" class="table table-dark table-dark">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(x => x.Id)</th>
+            <th>@Html.DisplayNameFor(x => x.UserTrabajador.Name)</th>
+            <th>@Html.DisplayNameFor(x => x.Descripcion)</th>
+            <th>Actions</th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @foreach (var descript in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => descript.Id)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => descript.UserTrabajador.Name)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => descript.Descripcion)
+                </th>
+                <td>
+                    <a class="btn btn-outline-primary" asp-action="SeeMore" asp-route-id="@descript.Id"><i class="fas fa-edit"></i>See More</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

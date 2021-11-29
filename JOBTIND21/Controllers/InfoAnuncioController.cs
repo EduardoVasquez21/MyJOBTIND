@@ -28,6 +28,12 @@ namespace JOBTIND21.Controllers
             var anunif = ianuncioInfo.GetAll().Where(e => e.Stado == true);
             return View(anunif);
         }
+
+        public IActionResult Info()
+        {
+            var anunif = ianuncioInfo.GetAll().Where(e => e.Stado == true);
+            return View(anunif);
+        }
         public IActionResult AddInfo()
         {
             var InfoDropDown = ianuncioInfo.GetNewInfoValues();

@@ -1,8 +1,12 @@
-﻿
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
 
 <head>
 
-    <link rel="stylesheet" href="~/css/Menu.css" />
+    <link rel="stylesheet" href="~/css/MenuTrabajador.css" />
 </head>
 
 
@@ -19,21 +23,21 @@
             <li>
                 <a href="#">Crear Cuentas</a>
                 <ul class="menu-vertical">
-                    <li><a href="/Usuario/SaveUser">Cuenta Usuario</a></li>
-                    <li><a href="/Empresa/SaveEnterprise">Cuenta Empresa</a></li>
+                    <li><a href="/Trabajador/AddTrabajador">Cuenta Trabajador</a></li>
                 </ul>
             </li>
-            <li><a href="/Anuncio/Index">Anuncios</a> </li>
+            <li><a href="/Anuncio/VerMas">Anuncios</a> </li>
             <li>
                 <a href="#">Empresas</a>
                 <ul class="menu-vertical">
-                    <li><a href="/Empresa/CompanyList">Ver Empresas</a></li>
+                    <li><a href="/Empresa/ListaEmp">Ver Empresas</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#">Trabajadores</a>
+                <a href="#">Lista Trabajadores</a>
                 <ul class="menu-vertical">
-                    <li><a href="/Trabajador/WorkerVist">Ver Trabajadores</a></li>
+                    <li><a href="/Trabajador/WorkerList">Lista</a></li>
+                    <li><a href="/Trabajador/Descripcion">Informacion</a></li>
                 </ul>
             </li>
         </ul>
@@ -43,13 +47,14 @@
         <section class="banner_title">
         </section>
     </section>
-        <div class="banner_img">
-            <img src="~/css/Imagenes/Proyec.jpg" alt="" class="animate__animated animate__backInDown">
-        </div>
+    <div class="banner_img">
+        <img src="~/css/Imagenes/Proyec.jpg" alt="" class="animate__animated animate__backInDown">
+    </div>
 
-        <div class="Madein">
-            <h1>Made In EL SALVADOR</h1>
-        </div>
-        <div class="Logo">
-        </div>
+    <div class="Madein">
+        <h1>Made In EL SALVADOR</h1>
+    </div>
+    <div class="Logo">
+    </div>
+  
 </body>

@@ -47,6 +47,15 @@ namespace JOBTIND21.Controllers
             return View();       
         }
 
+        public IActionResult MenuTrabajador()
+        {
+            return View();
+        }
+        public IActionResult IndexDos()
+        {
+            return View();
+        }
+
         public IActionResult Informacion()
         {
             return View();

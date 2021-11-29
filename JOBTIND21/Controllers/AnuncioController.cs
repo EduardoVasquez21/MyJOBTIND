@@ -115,6 +115,11 @@ namespace JOBTIND21.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public IActionResult VerMas()
+        {
+            var anuncio = ianuncio.GetAll().Where(e => e.Estado == true);
+            return View(anuncio);
+        }
 
 
     }

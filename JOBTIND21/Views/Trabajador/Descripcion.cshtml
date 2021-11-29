@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<PerfilTrabajador>
     @{
-        ViewData["Title"] = "Enrollement";
+        ViewData["Title"] = "Descripciones";
         Layout = "~/Views/Shared/_Layout.cshtml";
     }
     <link rel="stylesheet" href="~/css/Worker.css" />
@@ -38,7 +38,6 @@
                 <td>
                     <a class="btn btn-outline-primary" asp-action="UpdateDescription" asp-route-id="@descript.Id"><i class="fas fa-edit"></i>Update Description</a>
                     <a class="btn btn-danger" asp-action="DeleteDescription" asp-route-id="@descript.Id"><i class="fas fa-edit"></i>Delete Description</a>
-                    <a class="btn btn-outline-primary" asp-action="SeeMore" asp-route-id="@descript.Id"><i class="fas fa-edit"></i>See More</a>
                 </td>
             </tr>
             }

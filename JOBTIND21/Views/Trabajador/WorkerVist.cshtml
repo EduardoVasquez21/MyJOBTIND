@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<UserTrabajador>
 @{
-    ViewData["Title"] = "Trabajadores";
+    ViewData["Title"] = "Informacion";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -46,7 +46,7 @@
 
 
                 <td>
-                    <a class="btn btn-outline-primary" asp-action="UpdateWorker" asp-route-id="@worker.Id"><i class="fas fa-edit"></i>Update</a>
+                    <a class="btn btn-outline-primary" asp-action="DescripcionVist"><i class="fas fa-edit"></i>Ver Description</a>
 
                 </td>
             </tr>
@@ -56,10 +56,4 @@
 
 </table>
 
-<a class="btn btn-outline-secondary"  asp-controller="Home"  asp-action="MenuTrabajador">Back</a>
-
-<div style="position:fixed;right:25px; bottom:75px;" class="text-white">
-    <a asp-controller="Trabajador" asp-action="AddTrabajador" class="btn btn-success">
-        <i class="fas fa-plus"></i>ADD
-    </a>
-</div>
+<a class="btn btn-outline-secondary" asp-controller="Home" asp-action="MenuTrabajador">Back</a>

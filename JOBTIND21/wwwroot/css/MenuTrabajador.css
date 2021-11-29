@@ -117,7 +117,6 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    
 }
 
 .banner_title h2 {
@@ -143,7 +142,6 @@ body {
 
 .banner_img {
     animation: movimiento 2.5s linear infinite;
-    
 }
 
     .banner_img img {
@@ -152,7 +150,7 @@ body {
         width: 500px;
         display: block;
         border: solid black 3px;
-        top:50px;
+        top: 50px;
     }
 
 @keyframes movimiento {
@@ -196,3 +194,4 @@ h1 {
     left: 3%;
     position: absolute;
 }
+

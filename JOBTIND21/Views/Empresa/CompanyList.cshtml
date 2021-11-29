@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Empresa>
 @{
-    ViewData["Title"] = "MostrarAlumnos";
+    ViewData["Title"] = "Empresas";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -46,6 +46,7 @@
                 </th>
                 <td>
                     <a class="btn btn-outline-primary" asp-action="EnterpriseUpdate" asp-route-id="@company.Id"><i class="fas fa-edit"></i>Update</a>
+                    <a class="btn btn-outline-primary" asp-action="Profile"><i class="fas fa-edit"></i>Informacion</a>
 
                 </td>
             </tr>
