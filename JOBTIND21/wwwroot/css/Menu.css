@@ -11,6 +11,8 @@ body {
     background-image: url('Imagenes/fondo1.jpg')
 }
 
+
+
 nav {
     max-width: 900px;
     margin: auto;
@@ -148,11 +150,11 @@ body {
 
     .banner_img img {
         position: absolute;
-        right: 25%;
-        width: 500px;
+        right: 30%;
+        width: 400px;
         display: block;
         border: solid black 3px;
-        top:50px;
+        top:95px;
     }
 
 @keyframes movimiento {
