@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<InfoAnuncio>
 @{
-    ViewData["Title"] = "AnuncioInfo";
+    ViewData["Title"] = "JOBTIND21";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link rel="stylesheet" href="~/css/InfoAnuncios.css" />
+<link rel="stylesheet" href="~/css/FondoNuevo.css" />
 <script src="https://kit.fontawesome.com/16bd784e77.js" crossorigin="anonymous"></script>
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -61,7 +61,7 @@
     </tbody>
 
 </table>
-
+<a class="btn btn-outline-secondary" asp-controller="Home" asp-action="MenuTrabajador">Back</a>
 <div style="position:fixed;right:25px; bottom:75px;" class="text-white">
     <a asp-controller="InfoAnuncio" asp-action="AddInfo" class="btn btn-success">
         <i class="fas fa-plus"></i>ADD

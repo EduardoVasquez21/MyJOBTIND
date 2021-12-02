@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Usuario>
 @{
-    ViewData["Title"] = "MostrarAlumnos";
+    ViewData["Title"] = "JOBTIND21";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -11,6 +11,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 <h1 class=" animate__animated animate__lightSpeedInRight">User´s List</h1>
 
+
+<div style="position:fixed;right:25px; bottom:75px;" class="text-white">
+    <a asp-controller="Usuario" asp-action="SaveUser" class="btn btn-success">
+        <i class="fas fa-plus"></i>ADD
+
+    </a>
+    <button class="btn btn-outline-secondary"> @Html.ActionLink("Back", "SaveUser", "Usuario")</button>
+</div>
 
 <table id="mitablastu" class="table table-dark table-dark">
     <thead>
@@ -28,39 +36,31 @@
 
         @foreach (var user in Model)
         {
-        <tr>
-            <th>
-                @Html.DisplayFor(modelItem => user.Id)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => user.Nombres)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => user.Apellidos)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => user.Telefono)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => user.Email)
-            </th>
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => user.Id)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => user.Nombres)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => user.Apellidos)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => user.Telefono)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => user.Email)
+                </th>
 
 
-            <td>
-                <a class="btn btn-outline-primary" asp-action="UpdateUser" asp-route-id="@user.Id"><i class="fas fa-edit"></i>Update</a>
+                <td>
+                    <a class="btn btn-outline-primary" asp-action="UpdateUser" asp-route-id="@user.Id"><i class="fas fa-edit"></i>Update</a>
 
-            </td>
-        </tr>
+                </td>
+            </tr>
         }
 
     </tbody>
 
 </table>
-
-<div style="position:fixed;right:25px; bottom:75px;" class="text-white">
-    <a asp-controller="Usuario" asp-action="SaveUser" class="btn btn-success">
-        <i class="fas fa-plus"></i>ADD
-
-    </a>
-    <button class="btn btn-outline-secondary"> @Html.ActionLink("Back", "SaveUser", "Usuario")</button>
-</div>
