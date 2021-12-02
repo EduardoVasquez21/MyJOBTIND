@@ -12,13 +12,7 @@
 <h1 class=" animate__animated animate__lightSpeedInRight">User´s List</h1>
 
 
-<div style="position:fixed;right:25px; bottom:75px;" class="text-white">
-    <a asp-controller="Usuario" asp-action="SaveUser" class="btn btn-success">
-        <i class="fas fa-plus"></i>ADD
 
-    </a>
-    <button class="btn btn-outline-secondary"> @Html.ActionLink("Back", "SaveUser", "Usuario")</button>
-</div>
 
 <table id="mitablastu" class="table table-dark table-dark">
     <thead>
@@ -64,3 +58,12 @@
     </tbody>
 
 </table>
+<br /><br />
+<br /><br />
+<div style="position:fixed;right:25px; bottom:75px;" class="text-white">
+    <a asp-controller="Usuario" asp-action="SaveUser" class="btn btn-success">
+        <i class="fas fa-plus"></i>ADD
+
+    </a>
+    <button class="btn btn-outline-secondary"> @Html.ActionLink("Back", "SaveUser", "Usuario")</button>
+</div>
