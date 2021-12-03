@@ -46,7 +46,7 @@
                     @Html.DisplayFor(modelItem => company.Vacante)
                 </th>
                 <td>
-                    <a class="btn btn-outline-primary" asp-controller="Anuncio" asp-action="VerMas"><i class="fas fa-edit"></i>Anuncio</a>
+                    <a class="btn btn-outline-primary" asp-controller="Anuncio" asp-action="VerMas"><i class="fas fa-edit"></i>Anouncement</a>
                     <a class="btn btn-outline-primary" asp-controller="Empresa" asp-action="ProfileView"><i class="fas fa-edit"></i>See Profile</a>
 
                 </td>
@@ -56,11 +56,5 @@
     </tbody>
 
 </table>
-<div style="position:fixed;right:25px; bottom:75px;" class="text-white">
-    <a asp-controller="Empresa" asp-action="SaveEnterprise" class="btn btn-success">
-        <i class="fas fa-plus"></i>Add
-    </a>
-
-</div>
 
 <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="MenuTrabajador">Back</a>

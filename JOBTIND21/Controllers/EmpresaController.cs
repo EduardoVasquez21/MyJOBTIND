@@ -24,11 +24,6 @@ namespace JOBTIND21.Controllers
             _logger = logger;
         }
 
-        public IActionResult Bienvenida()
-        {
-            return View();
-        }
-
 
         public IActionResult SaveEnterprise()
         {
@@ -55,7 +50,7 @@ namespace JOBTIND21.Controllers
         public IActionResult EnterpriseUpdate(int id)
         {
             ViewBag.State = "EnterpriseUpdate";
-            ViewBag.Title = "Update Course";
+            ViewBag.Title = "Update";
             var EnterpriseEdit = iempresa.GetById(id);
             if (EnterpriseEdit == null)
                 return View("Error");
@@ -77,9 +72,9 @@ namespace JOBTIND21.Controllers
 
         public IActionResult GetAll()
         {
-            var DandoFormatoJsonStudent = iempresa.GetAll();
+            var DandoFormatoJsonEmpresa = iempresa.GetAll();
 
-            return Json(new { data = DandoFormatoJsonStudent });
+            return Json(new { data = DandoFormatoJsonEmpresa });
         }
 
         public IActionResult CompanyList()

@@ -54,7 +54,7 @@ namespace JOBTIND21.Repositorio
             }
         }
 
-        public Anuncio GetEnrollmentById(int id)
+        public Anuncio GetAnouncementById(int id)
         {
             var anuncio = bd.Anuncio
                 .Include(e => e.Empresa)
@@ -64,7 +64,7 @@ namespace JOBTIND21.Repositorio
             return anuncio;
         }
 
-        public AnuncioDropDown GetNewEnrollmentValues()
+        public AnuncioDropDown GetNewAnouncementValues()
         {
             var values = new AnuncioDropDown()
             {

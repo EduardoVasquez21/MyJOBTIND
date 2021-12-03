@@ -10,8 +10,8 @@ namespace JOBTIND21.Servicio
 {
     public interface IAnuncio:IEntityBase<Anuncio>
     {
-        Anuncio GetEnrollmentById(int id);
-        AnuncioDropDown GetNewEnrollmentValues();
+        Anuncio GetAnouncementById(int id);
+        AnuncioDropDown GetNewAnouncementValues();
 
         void AddAnuncio(AnuncioViewModel data);
         void UpdateAnuncio(AnuncioViewModel data);

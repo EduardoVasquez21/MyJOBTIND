@@ -33,7 +33,7 @@ namespace JOBTIND21.Controllers
 
         public IActionResult SaveAnuncio()
         {
-            var AnuncioDropDown = ianuncio.GetNewEnrollmentValues();
+            var AnuncioDropDown = ianuncio.GetNewAnouncementValues();
             ViewBag.Usuario = new SelectList(AnuncioDropDown.Usuario, "Id", "Nombres");
             ViewBag.Empresa = new SelectList(AnuncioDropDown.Empresa, "Id", "NombreEmpresa");
             return View();
@@ -44,7 +44,7 @@ namespace JOBTIND21.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var AnunData = ianuncio.GetNewEnrollmentValues();
+                var AnunData = ianuncio.GetNewAnouncementValues();
                 ViewBag.Usuario = new SelectList(AnunData.Usuario, "Id", "Nombres");
                 ViewBag.Empresa = new SelectList(AnunData.Empresa, "Id", "NombreEmpresa");
                 return View(anuncio);
@@ -56,7 +56,7 @@ namespace JOBTIND21.Controllers
 
         public IActionResult UpdateAnuncio(int id)
         {
-            var anuncio = ianuncio.GetEnrollmentById(id);
+            var anuncio = ianuncio.GetAnouncementById(id);
             if (anuncio == null)
                 return View("Error");
 
@@ -69,7 +69,7 @@ namespace JOBTIND21.Controllers
                 Anuncios = anuncio.Anuncios,
             };
 
-            var AnunData = ianuncio.GetNewEnrollmentValues();
+            var AnunData = ianuncio.GetNewAnouncementValues();
             ViewBag.Usuario = new SelectList(AnunData.Usuario, "Id", "Nombres");
             ViewBag.Empresa = new SelectList(AnunData.Empresa, "Id", "NombreEmpresa");
 
@@ -85,8 +85,8 @@ namespace JOBTIND21.Controllers
 
             if (!ModelState.IsValid)
             {
-                //var AnuncioData = ianuncio.GetNewEnrollmentValues();
-                var AnunData = ianuncio.GetNewEnrollmentValues();
+
+                var AnunData = ianuncio.GetNewAnouncementValues();
                 ViewBag.Usuario = new SelectList(AnunData.Usuario, "Id", "Nombres");
                 ViewBag.Empresa = new SelectList(AnunData.Empresa, "Id", "NombreEmpresa");
             }
@@ -98,7 +98,7 @@ namespace JOBTIND21.Controllers
 
         public IActionResult DeleteAnuncio(int id)
         {
-            var anuncio = ianuncio.GetEnrollmentById(id);
+            var anuncio = ianuncio.GetAnouncementById(id);
             if (anuncio == null)
                 return View("Error");
 

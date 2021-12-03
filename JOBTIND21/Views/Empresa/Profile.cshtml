@@ -38,15 +38,14 @@
                 <td>
                     <a class="btn btn-outline-primary" asp-action="UpdateProfile" asp-route-id="@descriptionE.Id"><i class="fas fa-edit"></i>Update Description</a>
                     <a class="btn btn-danger" asp-action="DeleteProfile" asp-route-id="@descriptionE.Id"><i class="fas fa-edit"></i>Delete Description</a>
-                    <a class="btn btn-outline-primary" asp-action="GoProfile" asp-route-id="@descriptionE.Id"><i class="fas fa-edit"></i>Go to Profile</a>
-                </td>
+                 </td>
             </tr>
         }
 
     </tbody>
 
 </table>
-<a class="btn btn-outline-secondary" asp-controller="Home" asp-action="MenuTrabajador">Back</a>
+<a class="btn btn-outline-secondary" asp-controller="Empresa" asp-action="CompanyList">Back</a>
 
 <div style="position:fixed;right:25px; bottom:75px;" class="text-white">
     <a asp-controller="Empresa" asp-action="AddProfile" class="btn btn-success">
