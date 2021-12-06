@@ -2,57 +2,58 @@
 
 
 <link rel="stylesheet" href="~/css/FondoNuevo.css" />
-    <script src="https://kit.fontawesome.com/16bd784e77.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<script src="https://kit.fontawesome.com/16bd784e77.js" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <h1 class=" animate__animated animate__bounceInUp">Annoucement´s Information</h1>
+<h1 class=" animate__animated animate__bounceInUp">Annoucement´s Information</h1>
 
 
-    <table id="mitablastu" class="table table-dark table-dark">
-        <thead>
+<table id="mitablastu" class="table table-dark table-dark">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(x => x.Id)</th>
+            <th>@Html.DisplayNameFor(x => x.AnuncioID)</th>
+            <th>@Html.DisplayNameFor(x => x.EdadRequerida)</th>
+            <th>@Html.DisplayNameFor(x => x.Requisitos)</th>
+            <th>@Html.DisplayNameFor(x => x.Horarios)</th>
+            <th>@Html.DisplayNameFor(x => x.Salario)</th>
+            <th>@Html.DisplayNameFor(x => x.Lugar)</th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @foreach (var infox in Model)
+        {
             <tr>
-                <th>@Html.DisplayNameFor(x => x.Id)</th>
-                <th>@Html.DisplayNameFor(x => x.AnuncioID)</th>
-                <th>@Html.DisplayNameFor(x => x.EdadRequerida)</th>
-                <th>@Html.DisplayNameFor(x => x.Requisitos)</th>
-                <th>@Html.DisplayNameFor(x => x.Horarios)</th>
-                <th>@Html.DisplayNameFor(x => x.Salario)</th>
-                <th>@Html.DisplayNameFor(x => x.Lugar)</th>
+                <th>
+                    @Html.DisplayFor(modelItem => infox.Id)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => infox.Anuncio.Anuncios)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => infox.EdadRequerida)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => infox.Requisitos)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => infox.Horarios)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => infox.Salario)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => infox.Lugar)
+                </th>
             </tr>
+        }
 
-        </thead>
-        <tbody>
+    </tbody>
 
-            @foreach (var infox in Model)
-            {
-                <tr>
-                    <th>
-                        @Html.DisplayFor(modelItem => infox.Id)
-                    </th>
-                    <th>
-                        @Html.DisplayFor(modelItem => infox.Anuncio.Anuncios)
-                    </th>
-                    <th>
-                        @Html.DisplayFor(modelItem => infox.EdadRequerida)
-                    </th>
-                    <th>
-                        @Html.DisplayFor(modelItem => infox.Requisitos)
-                    </th>
-                    <th>
-                        @Html.DisplayFor(modelItem => infox.Horarios)
-                    </th>
-                    <th>
-                        @Html.DisplayFor(modelItem => infox.Salario)
-                    </th>
-                    <th>
-                        @Html.DisplayFor(modelItem => infox.Lugar)
-                    </th>
-                </tr>
-            }
-
-        </tbody>
-
-    </table>
-
-    <a class="btn btn-outline-secondary" asp-controller="Anuncio" asp-action="VerMas">Back</a>
+</table>
+<br /><br />
+<br /><br />
+<a class="btn btn-outline-secondary" asp-controller="Anuncio" asp-action="VerMas">Back</a>

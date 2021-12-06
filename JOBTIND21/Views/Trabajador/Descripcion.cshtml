@@ -1,30 +1,30 @@
 ﻿@model IEnumerable<PerfilTrabajador>
-    @{
-        ViewData["Title"] = "JOBTIND21";
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
+@{
+    ViewData["Title"] = "JOBTIND21";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 <link rel="stylesheet" href="~/css/FondoNuevo.css" />
-    <script src="https://kit.fontawesome.com/16bd784e77.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<script src="https://kit.fontawesome.com/16bd784e77.js" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <h1 class=" animate__animated animate__bounceInUp">Description´s List</h1>
+<h1 class=" animate__animated animate__bounceInUp">Description´s List</h1>
 
 
-    <table id="tablades" class="table table-dark table-dark">
-        <thead>
-            <tr>
-                <th>@Html.DisplayNameFor(x => x.Id)</th>
-                <th>@Html.DisplayNameFor(x => x.UserTrabajador.Name)</th>
-                <th>@Html.DisplayNameFor(x => x.Descripcion)</th>
-                <th>Actions</th>
-            </tr>
+<table id="tablades" class="table table-dark table-dark">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(x => x.Id)</th>
+            <th>@Html.DisplayNameFor(x => x.UserTrabajador.Name)</th>
+            <th>@Html.DisplayNameFor(x => x.Descripcion)</th>
+            <th>Actions</th>
+        </tr>
 
-        </thead>
-        <tbody>
+    </thead>
+    <tbody>
 
-            @foreach (var descript in Model)
-            {
+        @foreach (var descript in Model)
+        {
             <tr>
                 <th>
                     @Html.DisplayFor(modelItem => descript.Id)
@@ -40,15 +40,17 @@
                     <a class="btn btn-danger" asp-action="DeleteDescription" asp-route-id="@descript.Id"><i class="fas fa-edit"></i>Delete Description</a>
                 </td>
             </tr>
-            }
+        }
 
-        </tbody>
+    </tbody>
 
-    </table>
-    <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="MenuTrabajador">Back</a>
-    <br/>
-    <div class="text-white">
-        <a asp-controller="Trabajador" asp-action="AddDescription" class="btn btn-success">
-            <i class="fas fa-plus"></i>Add Description
-        </a>
-    </div>
+</table>
+<br /><br />
+<br /><br />
+<a class="btn btn-outline-secondary" asp-controller="Home" asp-action="MenuTrabajador">Back</a>
+<br />
+<div class="text-white">
+    <a asp-controller="Trabajador" asp-action="AddDescription" class="btn btn-success">
+        <i class="fas fa-plus"></i>Add Description
+    </a>
+</div>
