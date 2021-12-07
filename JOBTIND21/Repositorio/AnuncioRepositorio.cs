@@ -22,9 +22,10 @@ namespace JOBTIND21.Repositorio
 
         public new IEnumerable<Anuncio> GetAll()
         {
-            var enrolments = bd.Anuncio.Include(n => n.Usuario).Include(s => s.Empresa).ToList();
-            return enrolments;
+            var anuncio = bd.Anuncio.Include(n => n.Usuario).Include(s => s.Empresa).ToList();
+            return anuncio;
         }
+
         public void AddAnuncio(AnuncioViewModel data)
         {
             var newAnuncio = new Anuncio()
